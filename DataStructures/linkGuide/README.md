@@ -8,6 +8,6 @@
   </tr>
   <tr>
     <td>231312</td>
-    <td> <a href="http://www.naver.com">바로가기🔎</a> </td>
+    <td> <a href="https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems">바로가기🔎</a> </td>
   </tr>
 </table>
