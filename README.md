@@ -16,7 +16,7 @@
     <td>Data Structuress</td>
     <td><a href="https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/linkGuide">문제집📒</a></td> <!-- list, queue, stack, set, map -->
     <td>
-      <a href="#">바로가기</a>
+      <a href="https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/handbook">바로가기🔎</a>
     </td>
   </tr>
 </table>
