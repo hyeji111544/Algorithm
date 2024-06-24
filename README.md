@@ -1,23 +1,10 @@
 # Algorithm
+알고리즘 공부 및 백준 문제 풀이 기록 <br>
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=hyeji3376)](https://solved.ac/hyeji3376/)
 
-##  📖 유형별 문제 📖
-<hr>
-<table>
-  <tr>
-    <th>번호</th>
-    <th>알고리즘</th>
-    <th>태그</th>
-    <th>풀이</th>
-    <th>내용 정리</th>
-  </tr>
-  <tr>
-    <td>01</td>
-    <td>자료 구조 </td>
-    <td>Data Structuress</td>
-    <td><a href="https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/linkGuide">문제집📒</a></td> <!-- list, queue, stack, set, map -->
-    <td>
-      <a href="https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/handbook">바로가기🔎</a>
-    </td>
-  </tr>
-</table>
-<hr>
+
+| 번호 | 알고리즘   | 태그               | 풀이                                                                         | 내용 정리                                                                  |
+|------|------------|--------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| 01   | 자료 구조  | Data Structuress   | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/handbook) |
+
+
