@@ -1,7 +1,7 @@
 # Algorithm
 알고리즘 공부 및 백준 문제 풀이 기록 <br>
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=hyeji3376)](https://solved.ac/hyeji3376/)
-
+ 
 <br>
 ✔문제집을 누르면 링크 가이드로 이동됩니다.
 
