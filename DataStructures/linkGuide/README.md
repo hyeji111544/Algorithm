@@ -1,11 +1,12 @@
 # LinkGuide 🗺
 
 
-| No                                                  | 제목                | 레벨 | 풀이                                                                                       |
-|-----------------------------------------------------|-------------------|------|------------------------------------------------------------------------------------------|
-| [2605](https://www.acmicpc.net/problem/2605)        | 줄세우기              | Bronze II | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2605)  |
-| [31562](https://www.acmicpc.net/problem/31562)      | 전주듣고 노래 맞추기       | Bronze I | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/31562) |
-| [27160](https://www.acmicpc.net/problem/27160)      | 할리갈리              |Bronze II| [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/27160) |
-| [7785](https://www.acmicpc.net/problem/7785)        | 회사에 남아있는 사람       |Silver V| [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/7785)  |
-| [2161](https://www.acmicpc.net/problem/2161)        | 카드 1              |Silver V | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2161)  |
-| [10828](https://www.acmicpc.net/problem/10828)        | 스택                |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/10828)  |
+| No                                             | 제목              | 레벨 | 풀이                                                                                       |
+|------------------------------------------------|-----------------|------|------------------------------------------------------------------------------------------|
+| [2605](https://www.acmicpc.net/problem/2605)   | 줄세우기            | Bronze II | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2605)  |
+| [31562](https://www.acmicpc.net/problem/31562) | 전주듣고 노래 맞추기     | Bronze I | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/31562) |
+| [27160](https://www.acmicpc.net/problem/27160) | 할리갈리            |Bronze II| [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/27160) |
+| [7785](https://www.acmicpc.net/problem/7785)   | 회사에 남아있는 사람     |Silver V| [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/7785)  |
+| [2161](https://www.acmicpc.net/problem/2161)   | 카드 1            |Silver V | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2161)  |
+| [10828](https://www.acmicpc.net/problem/10828) | 스택              |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/10828) |
+| [10828](https://www.acmicpc.net/problem/1620)  | 나는야 포켓몬 마스터 이다솜 |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1620)  |
