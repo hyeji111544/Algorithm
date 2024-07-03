@@ -29,64 +29,64 @@ top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들
 ```
 public class Main {
 	public static void main(String[] args) {
-	try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
-			
-			int N = Integer.parseInt(reader.readLine()); // 명령의 수
-			
-			Stack<Integer> stack = new Stack<>();
-			
-			for(int i=0; i<N; i++) {
-				String input = reader.readLine();
-				String[] stackList = input.split(" ");
-				String name = stackList[0];
-				// 입력된 명령어에 따른 case 처리
-				switch (name) {
-					case "push": {
-						Integer num= Integer.parseInt(stackList[1]);
-						stack.push(num);
-						break;
-					}
-					case "pop":{	
-						if(stack.isEmpty()) {
-							writer.write(String.valueOf(-1)+ "\n");
-						}else {
-							writer.write(String.valueOf(stack.pop()) + "\n");
-						}
-						break;
-					}
-					case "size" : {
-						writer.write(String.valueOf(stack.size()) + "\n");
-						break;
-					}
-					case "empty" : {
-						if(stack.isEmpty()) {
-							writer.write(String.valueOf(1) + "\n");
-						}else {
-							writer.write(String.valueOf(0) + "\n");
-						}
-						break;
-					}
-					case "top" : {
-						if(stack.isEmpty()) {
-							writer.write(String.valueOf(-1) + "\n");
-						}else {
-							writer.write(String.valueOf(stack.peek()) + "\n");
-						}
-						break;
-					}
-				}
-
-			}
-			
-			writer.flush();
-			writer.close();
-			reader.close();
-			
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
+		 try {
+	                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	                BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
+	                
+	                int N = Integer.parseInt(reader.readLine()); // 명령의 수
+	                
+	                Stack<Integer> stack = new Stack<>();
+	                
+	                for(int i=0; i<N; i++) {
+	                    String input = reader.readLine();
+	                    String[] stackList = input.split(" ");
+	                    String name = stackList[0];
+	                    // 입력된 명령어에 따른 case 처리
+	                    switch (name) {
+	                        case "push": {
+	                            Integer num= Integer.parseInt(stackList[1]);
+	                            stack.push(num);
+	                            break;
+	                        }
+	                        case "pop":{	
+	                            if(stack.isEmpty()) {
+	                                writer.write(String.valueOf(-1)+ "\n");
+	                            }else {
+	                                writer.write(String.valueOf(stack.pop()) + "\n");
+	                            }
+	                            break;
+	                        }
+	                        case "size" : {
+	                            writer.write(String.valueOf(stack.size()) + "\n");
+	                            break;
+	                        }
+	                        case "empty" : {
+	                            if(stack.isEmpty()) {
+	                                writer.write(String.valueOf(1) + "\n");
+	                            }else {
+	                                writer.write(String.valueOf(0) + "\n");
+	                            }
+	                            break;
+	                        }
+	                        case "top" : {
+	                            if(stack.isEmpty()) {
+	                                writer.write(String.valueOf(-1) + "\n");
+	                            }else {
+	                                writer.write(String.valueOf(stack.peek()) + "\n");
+	                            }
+	                            break;
+	                        }
+	                    }
+	    
+	                }
+	                
+	                writer.flush();
+	                writer.close();
+	                reader.close();
+	                
+	        }catch (Exception e) {
+	            e.printStackTrace();
+	        }
 		
 	}
 }
