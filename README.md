@@ -8,5 +8,5 @@
 | 번호 | 알고리즘   | 태그               | 풀이                                                                         | 내용 정리                                                                  |
 |------|------------|--------------------|------------------------------------------------------------------------------|----------------------------------------------------------------------------|
 | 01   | 자료 구조  | Data Structures   | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/handbook) |
-| 02   | 알고리즘   | Algorithms        | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/Algorithms/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/Algorithms/handbook) |
+| 02   | 정렬   | Sort        | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/Sort/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/Sort/handbook) |
 
