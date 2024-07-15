@@ -1,83 +1,49 @@
-##   <a href="https://www.acmicpc.net/problem/1052">📖 백준 1052 (행렬) 📖</a>
+##   <a href="https://www.acmicpc.net/problem/1052">📖 백준 1052 (물병) 📖</a>
 
 
 
 ### 문제
-```
-0과 1로만 이루어진 행렬 A와 행렬 B가 있다. 이때, 행렬 A를 행렬 B로 바꾸는데 필요한 연산의 횟수의 최솟값을 구하는 프로그램을 작성하시오.
-행렬을 변환하는 연산은 어떤 3×3크기의 부분 행렬에 있는 모든 원소를 뒤집는 것이다. (0 → 1, 1 → 0)
-```
-### 출력
-```
-첫째 줄에 문제의 정답을 출력한다. 만약 A를 B로 바꿀 수 없다면 -1을 출력한다.
-```
+![image](https://github.com/user-attachments/assets/b9345737-fc47-4bb4-8f7d-519cf5214218)
+
+
 ### 접근법
-1. 3*3 으로 탐색한다.
-2. 부분 행렬에 있는 `모든` 원소를 뒤집는다. -> 모든 원소를 뒤집는 메서드`change`
-3. 변환이 끝난 A,B 두 행렬이 동일한지 확인하여 -1 또는 연산 횟수를 출력.
+이 문제는 `비트마스킹` 문제로 이진수로 바꾸어 풀면 간단하다고 한다..!<br>
+예제의 `3 1` 을 이진법으로 표현했을 때 `N=3` 은 `11(2)` 이다. 이때 1의 개수가 물병의 개수를 의미한다.<br>
+한번에 들고갈 수 있는 물병의 수는 `K=1` 임으로 `N` 이 갖고있는 `1` 의 개수가 `K` 와 같거나 작아야 한다.<br>
+
+`11(2)` 에 1을 더할 시 `100(2)` 가 되어 문제를 충족하게 된다. 
 
 ### 풀이
+1. `while` 루프 안에서 필요한 물병 수를 계산한다.
+2. `int count = Integer.bitCount(N);` 입력받은 N의 이진수에서 `1` 의 개수를 센다.
+3. 1의 개수가 `K`와 같거나 작으면 루프 종료.
+4. 아닐 시 N과 물병수를 증가시키고 1번으로 돌아감.
 
 ```java
 public class Main_1052 {
-  static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
   public static void main(String[] args) throws IOException{
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-    StringTokenizer token = new StringTokenizer(br.readLine());
-    int N = Integer.parseInt(token.nextToken());
-    int M = Integer.parseInt(token.nextToken());
+    String[] input = br.readLine().split(" ");
+    int N = Integer.parseInt(input[0]);
+    int K = Integer.parseInt(input[1]);
 
-    int[][] A = new int[N][M];
-    int[][] B = new int[N][M];
+    int bottles = 0;
 
-    // A,B 행렬에 값 넣기
-    procession(A, N, M);
-    procession(B, N, M);
-
-    int count = 0;
-
-    // 접근법 1. 3*3 으로 탐색
-    for(int i = 0; i<=N-3; i++) {
-      for(int k=0; k<=M-3; k++) {
-        if(A[i][k] != B[i][k]) {
-            // 행렬의 원소가 같은지 확인 후 change 호출
-          change(A, i, k);
-          count++;
-        }
+    while (true) {
+      int count = Integer.bitCount(N);
+      if (count <= K) {
+        break;
       }
+      N++;
+      bottles++;
     }
 
-    // 행렬 동일한지 확인
-    for(int i = 0; i<N; i++) {
-      for(int k =0; k<M; k++) {
-        if(A[i][k] != B[i][k]) {
-          System.out.println(-1+"\n");
-          return;
-        }
-      }
-    }
-    System.out.println(count+"\n");
+    bw.write(String.valueOf(bottles));
+    bw.flush();
+    bw.close();
     br.close();
-  }
-
-  // 행렬에 값 넣기
-  public static void procession(int[][] R, int N, int M) throws IOException {
-    for(int i = 0; i<N; i++) {
-      String[] tokens = br.readLine().split("");
-      for(int k=0; k<M; k++) {
-        R[i][k] = Integer.parseInt(tokens[k]);
-      }
-    }
-  }
-  // 접근법 2. 3*3 형식으로 행렬 뒤집기
-  public static void change(int[][] A, int x, int y) {
-    for(int i = x; i<x+3; i++) {
-      for(int k=y; k<y+3; k++) {
-        A[i][k] = 1- A[i][k];
-      }
-    }
-
   }
 }
 ```
