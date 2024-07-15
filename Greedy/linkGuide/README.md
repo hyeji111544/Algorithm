@@ -8,3 +8,4 @@
 | [1052](https://www.acmicpc.net/problem/1052)  | 물병            | Gold V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/1052) |
 | [13164](https://www.acmicpc.net/problem/13164) | 행복 유치원        | Gold V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/13164) |
 | [4055](https://www.acmicpc.net/problem/4055) | 파티가 좋아 파티가 좋아 | Gold V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/4055) |
+| [1339](https://www.acmicpc.net/problem/1339) | 단어 수학         | Gold IV    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/1339) |
