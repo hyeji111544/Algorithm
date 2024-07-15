@@ -1,282 +1,51 @@
-# 알고리즘 내용 정리
+# 탐욕 알고리즘(Greedy Algorithm)이란?
+- Greedy 는 `탐욕스러운, 욕심 많은` 이란 뜻이다.
+- 탐욕 알고리즘은 말 그대로 `선택의 순간마다 당장 눈앞에 보이는 최적의 상황만을 쫓아 최종적인 해답에 도달하는 방법`
+- 순간마다 하는 선택은 그 순간에 대해 지역적으로는 최적이지만, 그 선택들을 계속 수집하여 최종적(전역적)인 해답을 만들었다고 해서, 그것이 최적이라는 보장은 없다.
+- 탐욕알고리즘을 적용할 수 있는 문제들은 지역적으로 최적이면서 전역적으로 최적인 문제들이다.
+  
+## ❗ 탐욕 알고리즘 문제를 해결하는 방법
+1. 선택 절차(Selection Procedure): 현재 상태에서의 최적의 해답을 선택한다.
+2. 적절성 검사(Feasibility Check): 선택된 해가 문제의 조건을 만족하는지 검사한다.
+3. 해답 검사(Solution Check): 원래의 문제가 해결되었는지 검사하고, 해결되지 않았다면 선택 절차로 돌아가 위의 과정을 반복한다.
 
-## 알고리즘이란?
-- 특정 문제를 해결하기 위해 정해진 일련의 절차나 방법을 말한다.
+## ❗ 탐욕 알고리즘을 적용하려면 문제가 다음 2가지 조건을 성립하여야 한다.
+- 탐욕스런 선택 조건(greedy choice property)과 최적 부분 구조 조건(optimal substructure)이라는 두 가지 조건이 만족된다
+- 탐욕스런 선택 조건은 앞의 선택이 이후의 선택에 영향을 주지 않는다는 것이며, 최적 부분 구조 조건은 문제에 대한 최적해가 부분문제에 대해서도 역시 최적해라는 것이다.
 
-<details>
+이러한 조건이 성립하지 않는 경우에는 탐욕 알고리즘은 최적해를 구하지 못한다. 하지만, 이러한 경우에도 탐욕 알고리즘은 `근사 알고리즘`으로 사용이 가능할 수 있으며, 대부분의 경우 계산 속도가 빠르기 때문에 실용적으로 사용할 수 있다. 
+이 경우 역시 어느 정도까지 최적해에 가까운 해를 구할 수 있는지를 보장하려면 엄밀한 증명이 필요하다.
 
-<summary>Sorting</summary>
-
-<details>
-
-<summary> 버블 정렬 Bubble Sort</summary>
-
-### 소개
-인접한 두 요소를 비교하여 정렬하는 가장 단순한 정렬 알고리즘 중 하나로, 각 패스마다 가장 큰 요소가 배열의 끝으로 이동한다.
-
-### 특징
-- 시간 복잡도: O(n^2)
-- 안정 정렬: 동일한 값의 요소들이 정렬 후에도 상대적인 순서가 유지된다.
-
-### 예제
-
-```java
-public class BubbleSort {
-    public static void bubbleSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n-1; i++) {
-            for (int j = 0; j < n-i-1; j++) {
-                if (arr[j] > arr[j+1]) {
-                    // swap arr[j] and arr[j+1]
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                }
-            }
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {64, 34, 25, 12, 22, 11, 90};
-        bubbleSort(arr);
-        System.out.println("Sorted array:");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-    }
-}
-
-```
-
-</details>
+어떤 특별한 구조가 있는 문제에 대해서는 탐욕 알고리즘이 언제나 최적해를 찾아낼 수 있다. 
+이 구조를 `매트로이드`라 한다. 매트로이드는 모든 문제에서 나타나는 것은 아니나, 여러 곳에서 발견되기 때문에 탐욕 알고리즘의 활용도를 높여 준다.
 
 <details>
 
-<summary> 선택 정렬 Selection Sort</summary>
+<summary>예시</summary>
 
-### 소개
-배열에서 가장 작은 요소를 찾아 첫 번째 위치와 교환하고, 다음 작은 요소를 찾아 두 번째 위치와 교환하는 방식으로 정렬한다.
+> 당신은 오늘도 편의점에서 열심히 아르바이트하고 있다. <br>
+손님이 과자와 음료를 하나씩 집어 들었고, 물건 가격은 총 4,040원이 나왔다. <br>
+손님은 계산을 하기 위해 5,000원을 내밀며, 거스름돈은 동전의 개수를 최소한으로 하여 거슬러 달라고 하였다.
 
-### 특징
-- 시간 복잡도: O(n^2)
-- 불안정 정렬: 동일한 값의 요소들이 정렬 후에 상대적인 순서가 바뀔 수 있습니다.
+### 👉 이때 어떻게 거슬러 주어야 할까?
+탐욕 알고리즘으로 동전의 개수를 헤아리는 일은 일반적으로 거스름돈으로 동전을 선택하는 방법과 동일하다. <br>
+거스름돈 960원을 채우기 위해서 먼저 500원짜리 동전을 한 개를 선택한다. <br>
+그다음은 100원짜리 동전을 네 개 선택하고, 그다음엔 50원짜리 동전과 10원짜리 동전을 각각 하나씩 선택할 것이다. <br>
 
-### 예제
+### 👉 탐욕 알고리즘의 문제 해결 과정을 적용
 
-```java
-public class SelectionSort {
-    public static void selectionSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 0; i < n-1; i++) {
-            int min_idx = i;
-            for (int j = i+1; j < n; j++) {
-                if (arr[j] < arr[min_idx]) {
-                    min_idx = j;
-                }
-            }
-            // Swap the found minimum element with the first element
-            int temp = arr[min_idx];
-            arr[min_idx] = arr[i];
-            arr[i] = temp;
-        }
-    }
+1. 선택 절차
+- 거스름돈의 동전 개수를 줄이기 위해 현재 가장 가치가 높은 동전을 우선 선택한다.
 
-    public static void main(String[] args) {
-        int[] arr = {64, 25, 12, 22, 11};
-        selectionSort(arr);
-        System.out.println("Sorted array:");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-    }
-}
+2. 적절성 검사
+- 1번 과정을 통해 선택된 동전들의 합이 거슬러 줄 금액을 초과하는지 검사한다.
+- 초과하면 가장 마지막에 선택한 동전을 삭제하고, 1번으로 돌아가 한 단계 작은 동전을 선택한다.
 
+3. 해답 검사
+- 선택된 동전들의 합이 거슬러 줄 금액과 일치하는지 검사한다.
+- 액수가 부족하면 1번 과정부터 다시 반복한다.
 
-```
-
-
-</details>
-
-<details>
-
-<summary> 삽입 정렬 Insert Sort</summary>
-
-### 소개
-배열을 두 부분으로 나누고, 정렬된 부분에 요소를 하나씩 삽입하여 정렬하는 방식이다.
-
-### 특징
-- 시간 복잡도: O(n^2)
-- 안정 정렬: 동일한 값의 요소들이 정렬 후에도 상대적인 순서가 유지
-
-### 예제
-
-```java
-public class InsertionSort {
-    public static void insertionSort(int[] arr) {
-        int n = arr.length;
-        for (int i = 1; i < n; ++i) {
-            int key = arr[i];
-            int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
-            }
-            arr[j + 1] = key;
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {12, 11, 13, 5, 6};
-        insertionSort(arr);
-        System.out.println("Sorted array:");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-    }
-}
-
-
-```
-
-</details>
-
-<details>
-
-<summary> 병합 정렬 Merge Sort</summary>
-
-### 소개
-분할 정복 알고리즘의 일종으로, 배열을 반으로 나누고 각각을 정렬한 후 병합하여 정렬
-이 과정은 **재귀호출**을 통해 이루어진다.
-
-합병 정렬은 다음의 단계들로 이루어져 있는데.
-
-- **분할(Divide)**: 입력 배열을 같은 크기의 2개의 부분 배열로 **분할**한다.
-- **정복(Conquer)**: 부분 배열을 **정렬**합니다. 부분 배열의 크기가 조금 큰 편이라고 생각이 들면 재귀 호출을 통해 다시 분할 정복 방법을 진행한다.
-
-### 특징
-- 시간 복잡도: O(n log n)
-- 안정 정렬: 동일한 값의 요소들이 정렬 후에도 상대적인 순서가 유지
-
-### 예제
-
-```java
-public class MergeSort {
-    public static void mergeSort(int[] arr, int l, int r) {
-        if (l < r) {
-            int m = (l + r) / 2;
-            mergeSort(arr, l, m);
-            mergeSort(arr, m + 1, r);
-            merge(arr, l, m, r);
-        }
-    }
-
-    public static void merge(int[] arr, int l, int m, int r) {
-        int n1 = m - l + 1;
-        int n2 = r - m;
-
-        int[] L = new int[n1];
-        int[] R = new int[n2];
-
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
-
-        int i = 0, j = 0;
-        int k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            } else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
-        }
-
-        while (i < n1) {
-            arr[k] = L[i];
-            i++;
-            k++;
-        }
-
-        while (j < n2) {
-            arr[k] = R[j];
-            j++;
-            k++;
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {12, 11, 13, 5, 6, 7};
-        mergeSort(arr, 0, arr.length - 1);
-        System.out.println("Sorted array:");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-    }
-}
-
-
-```
-
-</details>
-
-<details>
-
-<summary> 퀵 정렬 Quick Sort</summary>
-
-### 소개
-분할 정복 알고리즘의 일종으로, 피벗을 기준으로 배열을 나누고 각각을 정렬하는 방식
-
-### 특징
-- 시간 복잡도: 평균 O(n log n), 최악의 경우 O(n^2)
-- 불안정 정렬: 동일한 값의 요소들이 정렬 후에 상대적인 순서가 바뀔 수 있다.
-
-### 예제
-
-```java
-public class QuickSort {
-    public static void quickSort(int[] arr, int low, int high) {
-        if (low < high) {
-            int pi = partition(arr, low, high);
-            quickSort(arr, low, pi - 1);
-            quickSort(arr, pi + 1, high);
-        }
-    }
-
-    public static int partition(int[] arr, int low, int high) {
-        int pivot = arr[high];
-        int i = (low - 1);
-        for (int j = low; j < high; j++) {
-            if (arr[j] < pivot) {
-                i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[high];
-        arr[high] = temp;
-        return i + 1;
-    }
-
-    public static void main(String[] args) {
-        int[] arr = {10, 7, 8, 9, 1, 5};
-        quickSort(arr, 0, arr.length - 1);
-        System.out.println("Sorted array:");
-        for (int i : arr) {
-            System.out.print(i + " ");
-        }
-    }
-}
-
-
-```
-
-</details>
-
+### 👉 이 과정을 통해 얻은 문제에 대한 해답
+- 가장 가치가 높은 동전인 500원 1개를 먼저 거슬러 주고 잔액을 확인한 뒤, 이후 100원 4개, 50원 1개, 10원 1개의 순서대로 거슬러 준다.
 
 </details>
