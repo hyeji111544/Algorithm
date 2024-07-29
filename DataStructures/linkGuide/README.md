@@ -13,3 +13,4 @@
 | [1764](https://www.acmicpc.net/problem/1764)   | 듣보잡             |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1764)  |
 | [1417](https://www.acmicpc.net/problem/1417)   | 국회의원 선거         |Silver V | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1417)  |
 | [1889](https://www.acmicpc.net/problem/1889)   | 선물 교환           | Gold IV    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1889)  |
+| [2164](https://www.acmicpc.net/problem/2164)   | 카드 2            | Silver IV    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2164)  |
