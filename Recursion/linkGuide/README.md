@@ -3,9 +3,6 @@
 
 | No                                            | 제목            | 레벨        | 풀이                                                                              |
 |-----------------------------------------------|---------------|-----------|---------------------------------------------------------------------------------|
-| [2847](https://www.acmicpc.net/problem/2847)  | 게임을 만든 동준이    | Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/2847) |
-| [1080](https://www.acmicpc.net/problem/1080)  | 행렬            | Silver I  | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/1080) |
-| [1052](https://www.acmicpc.net/problem/1052)  | 물병            | Gold V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/1052) |
-| [13164](https://www.acmicpc.net/problem/13164) | 행복 유치원        | Gold V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/13164) |
-| [4055](https://www.acmicpc.net/problem/4055) | 파티가 좋아 파티가 좋아 | Gold V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/4055) |
-| [1339](https://www.acmicpc.net/problem/1339) | 단어 수학         | Gold IV    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/problems/1339) |
+| [25501](https://www.acmicpc.net/problem/25501)  | 재귀의 귀재    | Bronze II | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Recursion/problems/25501) |
+| [4779](https://www.acmicpc.net/problem/4779)  | 칸토어 집합            | Silver III  | [Java](https://github.com/hyeji111544/Algorithm/tree/main/Recursion/problems/4779) |
+
