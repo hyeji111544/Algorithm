@@ -1,49 +1,50 @@
-##   <a href="https://www.acmicpc.net/problem/1052">📖 백준 1052 (물병) 📖</a>
+##   <a href="https://www.acmicpc.net/problem/25501">📖 백준 25501 (재귀의 귀재) 📖</a>
 
 
 
 ### 문제
-![image](https://github.com/user-attachments/assets/b9345737-fc47-4bb4-8f7d-519cf5214218)
+첫째 줄에 테스트케이스의 개수 
+$T$가 주어진다. (
+$1 \leq T \leq 1\,000$)
 
+둘째 줄부터 
+$T$개의 줄에 알파벳 대문자로 구성된 문자열 
+$S$가 주어진다. (
+$1 \leq \vert S\vert \leq 1\,000$)
+
+각 테스트케이스마다, isPalindrome 함수의 반환값과 recursion 함수의 호출 횟수를 한 줄에 공백으로 구분하여 출력한다.
 
 ### 접근법
-이 문제는 `비트마스킹` 문제로 이진수로 바꾸어 풀면 간단하다고 한다..!<br>
-예제의 `3 1` 을 이진법으로 표현했을 때 `N=3` 은 `11(2)` 이다. 이때 1의 개수가 물병의 개수를 의미한다.<br>
-한번에 들고갈 수 있는 물병의 수는 `K=1` 임으로 `N` 이 갖고있는 `1` 의 개수가 `K` 와 같거나 작아야 한다.<br>
+풀이를 위한 재귀 함수 `recursion` 와 호출하는 `isPalindrome` 는 문제에서 주어진다.
+재귀 함수의 호출 횟수를 출력하기 위해 `static int result`를 사용함.
+`static` 을 초기화 하기 위해 for 문 안에서 0 으로 초기화 한다.
 
-`11(2)` 에 1을 더할 시 `100(2)` 가 되어 문제를 충족하게 된다. 
-
-### 풀이
-1. `while` 루프 안에서 필요한 물병 수를 계산한다.
-2. `int count = Integer.bitCount(N);` 입력받은 N의 이진수에서 `1` 의 개수를 센다.
-3. 1의 개수가 `K`와 같거나 작으면 루프 종료.
-4. 아닐 시 N과 물병수를 증가시키고 1번으로 돌아감.
 
 ```java
-public class Main_1052 {
-  public static void main(String[] args) throws IOException{
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-    String[] input = br.readLine().split(" ");
-    int N = Integer.parseInt(input[0]);
-    int K = Integer.parseInt(input[1]);
-
-    int bottles = 0;
-
-    while (true) {
-      int count = Integer.bitCount(N);
-      if (count <= K) {
-        break;
-      }
-      N++;
-      bottles++;
+public class Main {
+	
+	static int result;
+	public static int recursion(String s, int l, int r){
+		result++;
+        if(l >= r) return 1;
+        else if(s.charAt(l) != s.charAt(r)) return 0;
+        else return recursion(s, l+1, r-1);
     }
-
-    bw.write(String.valueOf(bottles));
-    bw.flush();
-    bw.close();
-    br.close();
-  }
+    public static int isPalindrome(String s){
+        return recursion(s, 0, s.length()-1);
+    }
+    
+    public static void main(String[] args)throws IOException{
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    		int N = Integer.parseInt(reader.readLine());
+    		for(int i = 0 ; i<N; i++) {
+    			String testCase = reader.readLine();
+    			result = 0;
+    			int e = isPalindrome(testCase);
+    			System.out.println(e+" "+ result);
+    		}
+    	
+    }
 }
+
 ```
