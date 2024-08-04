@@ -10,3 +10,4 @@
 | 01   | 자료 구조  | Data Structures   | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/handbook) |
 | 02   | 정렬   | Sort        | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/Sort/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/Sort/handbook) |
 | 03   | 그리디   | Greedy        | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/Greedy/handbook) |
+| 04   | 재귀   | Recursion        | [문제집📒](https://github.com/hyeji111544/Algorithm/tree/main/Recursion/linkGuide) | [바로가기🔎](https://github.com/hyeji111544/Algorithm/tree/main/Recursion/handbook) |
