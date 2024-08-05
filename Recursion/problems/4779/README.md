@@ -1,83 +1,66 @@
-##   <a href="https://www.acmicpc.net/problem/1080">📖 백준 1080 (행렬) 📖</a>
+##   <a href="https://www.acmicpc.net/problem/4779">📖 백준 4779 (칸토어 집합) 📖</a>
 
 
 
 ### 문제
-```
-0과 1로만 이루어진 행렬 A와 행렬 B가 있다. 이때, 행렬 A를 행렬 B로 바꾸는데 필요한 연산의 횟수의 최솟값을 구하는 프로그램을 작성하시오.
-행렬을 변환하는 연산은 어떤 3×3크기의 부분 행렬에 있는 모든 원소를 뒤집는 것이다. (0 → 1, 1 → 0)
-```
-### 출력
-```
-첫째 줄에 문제의 정답을 출력한다. 만약 A를 B로 바꿀 수 없다면 -1을 출력한다.
-```
+![image](https://github.com/user-attachments/assets/89c03dfe-3635-4bc9-911f-9681cd62a4b1)
+
+
 ### 접근법
-1. 3*3 으로 탐색한다.
-2. 부분 행렬에 있는 `모든` 원소를 뒤집는다. -> 모든 원소를 뒤집는 메서드`change`
-3. 변환이 끝난 A,B 두 행렬이 동일한지 확인하여 -1 또는 연산 횟수를 출력.
+
+![image](https://github.com/user-attachments/assets/3521f5d6-4472-4b30-b979-708997818b28)
+
+1. 입력이 2라고 가정했을 때 StringBuilder `sb` 에는 위의 입력과 같이 저장된다. <br>
+2. 첫번째 3,4,5 를 빈 문자열 `' '` 로 변경하기 위해 3,4,5 에 해당하는 숫자를 구한다. <br>
+   이는 코드상의 `middle` 과 `start+2*middle` 에 해당함. <br>
+3. 이후 `start, middle` : 위의 예시에서 0,3 / `start+2*middle, middle` : 예시에서 6,3 으로 재귀호출 한다.  <br>
+
+- 문자를 하나만 바꾸기 위해 `StringBuilder` 의 `setCharAt` 사용
+- 입력의 끝을 체크하기 위해 while 내부에서 `number` 를 확인함
 
 ### 풀이
 
 ```java
-public class Main_1052 {
-  static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+public class Main_4779 {
+	static StringBuilder sb;
+	
+	public static void recursion(int start, int length) {
+		if(length==1) {
+			return;
+		}
+		int middle = length/3;
+		for(int i = start+middle; i<start+2*middle; i++) {
+			sb.setCharAt(i, ' ');;
+		}
+		
+		recursion(start, middle);
+		recursion(start+2*middle, middle);
+	}
+    
+    public static void main(String[] args)throws IOException{
+    	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    	BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    	
+		while(true) {
+			String number = br.readLine();
+			if (number == null || number.trim().isEmpty()) {
+                break;
+			}
+			sb = new StringBuilder();
+			int length = (int) Math.pow(3, Integer.parseInt(number));
 
-  public static void main(String[] args) throws IOException{
-
-    StringTokenizer token = new StringTokenizer(br.readLine());
-    int N = Integer.parseInt(token.nextToken());
-    int M = Integer.parseInt(token.nextToken());
-
-    int[][] A = new int[N][M];
-    int[][] B = new int[N][M];
-
-    // A,B 행렬에 값 넣기
-    procession(A, N, M);
-    procession(B, N, M);
-
-    int count = 0;
-
-    // 접근법 1. 3*3 으로 탐색
-    for(int i = 0; i<=N-3; i++) {
-      for(int k=0; k<=M-3; k++) {
-        if(A[i][k] != B[i][k]) {
-            // 행렬의 원소가 같은지 확인 후 change 호출
-          change(A, i, k);
-          count++;
-        }
-      }
-    }
-
-    // 행렬 동일한지 확인
-    for(int i = 0; i<N; i++) {
-      for(int k =0; k<M; k++) {
-        if(A[i][k] != B[i][k]) {
-          System.out.println(-1+"\n");
-          return;
-        }
-      }
-    }
-    System.out.println(count+"\n");
-    br.close();
+	    	
+			for(int i = 0; i<length; i++) {
+				sb.append('-');
+			}
+			recursion(0, length);
+			bw.write(sb.toString()+'\n');
+			bw.flush(); 
+			
+		}
+       
   }
-
-  // 행렬에 값 넣기
-  public static void procession(int[][] R, int N, int M) throws IOException {
-    for(int i = 0; i<N; i++) {
-      String[] tokens = br.readLine().split("");
-      for(int k=0; k<M; k++) {
-        R[i][k] = Integer.parseInt(tokens[k]);
-      }
-    }
-  }
-  // 접근법 2. 3*3 형식으로 행렬 뒤집기
-  public static void change(int[][] A, int x, int y) {
-    for(int i = x; i<x+3; i++) {
-      for(int k=y; k<y+3; k++) {
-        A[i][k] = 1- A[i][k];
-      }
-    }
-
-  }
+	
 }
+
 ```
