@@ -16,4 +16,5 @@
 | [2164](https://www.acmicpc.net/problem/2164)   | 카드 2            | Silver IV   | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2164)  |
 | [18258](https://www.acmicpc.net/problem/18258)   | 큐 2             | Silver IV   | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/18258) |
 | [28278](https://www.acmicpc.net/problem/28278)   | 스택 2             | Silver IV   | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/28278) |
+| [28279](https://www.acmicpc.net/problem/28279)   | 덱 2             | Silver IV   | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/28279) |
 | [11866](https://www.acmicpc.net/problem/11866)   | 요세푸스 문제 0       | Silver V    | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/11866) |
