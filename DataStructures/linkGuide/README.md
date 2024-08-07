@@ -8,6 +8,7 @@
 | [27160](https://www.acmicpc.net/problem/27160) | 할리갈리            |Bronze II| [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/27160) |
 | [7785](https://www.acmicpc.net/problem/7785)   | 회사에 남아있는 사람     |Silver V| [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/7785)  |
 | [2161](https://www.acmicpc.net/problem/2161)   | 카드 1            |Silver V | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/2161)  |
+| [1427](https://www.acmicpc.net/problem/1427)   | 소트인사이드          |Silver V | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1427)  |
 | [10828](https://www.acmicpc.net/problem/10828) | 스택              |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/10828) |
 | [1620](https://www.acmicpc.net/problem/1620)   | 나는야 포켓몬 마스터 이다솜 |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1620)  |
 | [1764](https://www.acmicpc.net/problem/1764)   | 듣보잡             |Silver IV | [Java](https://github.com/hyeji111544/Algorithm/tree/main/DataStructures/problems/1764)  |
